@@ -1,6 +1,10 @@
-from collections import Counter
-def word_count(fname):
-        with open(fname) as f:
-                return Counter(f.read().split())
+import re
+import collections
 
-print("Number of words in the file :",word_count("file.txt"))
+frequencies = re.findall('\w+', open('file.txt').read().lower())
+cnt = collections.Counter()
+words = re.findall('\w+', open('file1.txt').read().lower())
+for word in words:
+    if word in frequencies:
+        cnt[word] += 1
+print (cnt)
