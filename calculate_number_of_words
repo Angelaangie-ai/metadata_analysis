@@ -1,4 +1,4 @@
-file = open(file, "rt")
+file = open("file.txt", "rt")
 data = file.read()
 words = data.split()
 
